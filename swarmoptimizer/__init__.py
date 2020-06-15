@@ -6,7 +6,6 @@ import copy
 from particle.particle_factory import get_particle_instance
 from utils.parameters import SwarmParameters
 
-
 class SwarmOptimizer:
     def __init__(self, dimensions, swarm_size, swarm_optimizer_type="standard", particle=None, **kwargs):
         self.swarm_size = swarm_size
@@ -15,10 +14,12 @@ class SwarmOptimizer:
         else:
             self.particle = particle
         self.max_iterations = kwargs.get('max_iterations') if kwargs.get('max_iterations') else 100
+        device = 'cuda' if torch.cuda.is_available() else 'cpu'
+        device = kwargs.get("device") if kwargs.get("device") else device
         self.swarm = []
-        self.gbest_position = None
+        self.gbest_position = torch.Tensor([0]).to(device)
         self.gbest_particle = None
-        self.gbest_value = torch.Tensor([float("inf")])
+        self.gbest_value = torch.Tensor([float("inf")]).to(device)
         for i in range(self.swarm_size):
             self.swarm.append(self.particle(dimensions, **kwargs))
 
