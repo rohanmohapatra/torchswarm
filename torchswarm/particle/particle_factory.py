@@ -1,4 +1,4 @@
-from particle import Particle, RotatedParticle, ExponentiallyWeightedMomentumParticle, RotatedEWMParticle
+from torchswarm.particle import Particle, RotatedParticle, ExponentiallyWeightedMomentumParticle, RotatedEWMParticle
 
 
 def get_particle_instance(swarm_optimizer_type):

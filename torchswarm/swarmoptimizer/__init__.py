@@ -3,8 +3,8 @@ import time
 import torch
 import copy
 
-from particle.particle_factory import get_particle_instance
-from utils.parameters import SwarmParameters
+from torchswarm.particle.particle_factory import get_particle_instance
+from torchswarm.utils.parameters import SwarmParameters
 
 class SwarmOptimizer:
     def __init__(self, dimensions, swarm_size, swarm_optimizer_type="standard", particle=None, **kwargs):

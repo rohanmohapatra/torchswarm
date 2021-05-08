@@ -2,10 +2,10 @@ import unittest
 
 import torch
 
-from particle import Particle, ExponentiallyWeightedMomentumParticle
-from swarmoptimizer import SwarmOptimizer
-from utils.parameters import SwarmParameters
-from utils.rotation_utils import get_rotation_matrix, get_inverse_matrix, get_phi_matrix
+from torchswarm.particle import Particle, ExponentiallyWeightedMomentumParticle
+from torchswarm.swarmoptimizer import SwarmOptimizer
+from torchswarm.utils.parameters import SwarmParameters
+from torchswarm.utils.rotation_utils import get_rotation_matrix, get_inverse_matrix, get_phi_matrix
 import numpy as np
 
 

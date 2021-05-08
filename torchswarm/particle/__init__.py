@@ -1,8 +1,8 @@
 import torch
 import numpy as np
 
-from utils.rotation_utils import get_rotation_matrix, get_inverse_matrix, get_phi_matrix
-from utils.parameters import SwarmParameters
+from torchswarm.utils.rotation_utils import get_rotation_matrix, get_inverse_matrix, get_phi_matrix
+from torchswarm.utils.parameters import SwarmParameters
 
 
 class Particle:
